@@ -31,6 +31,7 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- =======================================================
   * Template Name: NiceAdmin
   * Updated: Jan 29 2024 with Bootstrap v5.3.2
@@ -41,12 +42,10 @@
 </head>
 
 <body>
-
-    <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="dashboard.html" class="logo d-flex align-items-center">
+            <a href="index.html" class="logo d-flex align-items-center">
                 <img src="assets/img/nxLogo.webp" alt="">
                 <span class="d-none d-lg-block">FieldService</span>
             </a>
@@ -72,7 +71,7 @@
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">Ilyaad Damree</span>
+                        <span class="d-none d-md-block dropdown-toggle ps-2">Kavish Mojhoa</span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
@@ -121,7 +120,7 @@
                             </a>
                         </li>
 
-                    </ul><!-- End Profile Dropdown Items -->                    
+                    </ul><!-- End Profile Dropdown Items -->
                 </li><!-- End Profile Nav -->
 
                 <a class="nav-link nav-icon" href="pages-login.html">
@@ -129,7 +128,7 @@
                 </a><!-- End Messages Icon -->
             </ul>
 
-            
+
         </nav><!-- End Icons Navigation -->
 
     </header><!-- End Header -->
@@ -140,7 +139,7 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="dashboard.html">
+                <a class="nav-link " href="index.html">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
@@ -162,20 +161,6 @@
                 </a>
             </li><!-- End Contact Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="">
-                    <i class="bi bi-card-list"></i>
-                    <span>Register</span>
-                </a>
-            </li><!-- End Register Page Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Login</span>
-                </a>
-            </li><!-- End Login Page Nav -->
-
             <li class="nav-heading">Transactions</li>
 
             <li class="nav-item">
@@ -193,46 +178,45 @@
                 </a>
             </li>
 
-            <li class="nav-heading">SeMaster Data</li>
+            <li class="nav-heading" id="masterData">Master Data</li>
 
-            <li class="nav-item">
+            <li class="nav-item" id="CustomerSidebar">
                 <a class="nav-link collapsed" href="">
                     <i class="bi bi-person-standing"></i>
                     <span>Customer</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="ContactSidebar">
                 <a class="nav-link collapsed" href="">
                     <i class="bi bi-person-rolodex"></i>
                     <span>Contacts</span>
                 </a>
             </li>
-
-            <li class="nav-item">
+            <li class="nav-item" id="ItemsSidebar">
                 <a class="nav-link collapsed" href="">
                     <i class="bi bi-card-checklist"></i>
                     <span>Items</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="">
-                    <i class="bi bi-person-arms-up"></i>
-                    <span>Employees</span>
-                </a>
+            <li class="nav-item" id="EmployeeSidebar"></li>
+            <a class="nav-link collapsed" href="">
+                <i class="bi bi-person-arms-up"></i>
+                <span>Employees</span>
+            </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="TaskSidebar">
                 <a class="nav-link collapsed" href="">
                     <i class="bi bi-list-task"></i>
                     <span>Task</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="TaskGroupSidebar">
                 <a class="nav-link collapsed" href="">
                     <i class="bi bi-collection"></i>
                     <span>Task Group</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="AssetSidebar">
                 <a class="nav-link collapsed" href="">
                     <i class="bi bi-box"></i>
                     <span>Asset</span>
@@ -249,7 +233,7 @@
             <h1>Dashboard</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
             </nav>

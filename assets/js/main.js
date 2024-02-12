@@ -20,19 +20,42 @@
     }
   }
 
-  document.getElementById("loginButton").addEventListener("click", function () {
-    
-    var username = document.getElementById("yourUsername").value;
-    var password = document.getElementById("yourPassword").value;
-    
-    if (username === "ilyaaddamree" && password === "sdfsdf") {
-      console.log("Username:", username); 
-      console.log("Password:", password);   
-      //window.location.href = "index.html";
+  // Event listener for form submission
+  document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    let username = document.getElementById("yourUsername").value;
+    let password = document.getElementById("yourPassword").value;
+
+    if (username === "kavish" && password === "sdfsdf") {
+      console.log("Username:", username);
+      console.log("Password:", password);
+      window.location.href = "index.html";
+
+    } else if (username === "pravesh" && password === "sdfsdf") {
+      
+      window.location.href = "index.html";
+      var elementsToHide = [
+        "masterData",
+        "CustomerSidebar",
+        "ContactSidebar",
+        "ItemsSidebar",
+        "EmployeeSidebar",
+        "TaskSidebar",
+        "TaskGroupSidebar",
+        "AssetSidebar"
+      ];
+
+      elementsToHide.forEach(function (id) {
+        var element = document.getElementById(id);
+        if (element) {
+          element.style.display = "none";
+        }
+      });
     } else {
-        alert("Incorrect username or password!");
+      alert("Incorrect username or password!");
     }
-});
+  });
 
 
   /**
