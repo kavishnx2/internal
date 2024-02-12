@@ -354,10 +354,10 @@
     } else if (username === "pravesh" && password === "sdfsdf") {
       
      
-      window.location.href = "index.html";
+      window.location.href = "dashboard.html";
     } else if (username === "kamlesh" && password === "sdfsdf") {
       
-      window.location.href = "index.html";
+      window.location.href = "dashboard.html";
     } else {
       alert("Incorrect username or password!");
     }
