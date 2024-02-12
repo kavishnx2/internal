@@ -20,42 +20,8 @@
     }
   }
 
-  // Event listener for form submission
-  document.getElementById("loginForm").addEventListener("submit", function (event) {
-    event.preventDefault();
 
-    let username = document.getElementById("yourUsername").value;
-    let password = document.getElementById("yourPassword").value;
 
-    if (username === "kavish" && password === "sdfsdf") {
-      console.log("Username:", username);
-      console.log("Password:", password);
-      window.location.href = "index.html";
-
-    } else if (username === "pravesh" && password === "sdfsdf") {
-      
-      window.location.href = "index.html";
-      var elementsToHide = [
-        "masterData",
-        "CustomerSidebar",
-        "ContactSidebar",
-        "ItemsSidebar",
-        "EmployeeSidebar",
-        "TaskSidebar",
-        "TaskGroupSidebar",
-        "AssetSidebar"
-      ];
-
-      elementsToHide.forEach(function (id) {
-        var element = document.getElementById(id);
-        if (element) {
-          element.style.display = "none";
-        }
-      });
-    } else {
-      alert("Incorrect username or password!");
-    }
-  });
 
 
   /**
@@ -371,5 +337,50 @@
       }).observe(mainContainer);
     }, 200);
   }
+
+
+
+  document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    let username = document.getElementById("yourUsername").value;
+    let password = document.getElementById("yourPassword").value;
+
+    if (username === "kavish" && password === "sdfsdf") {
+      console.log("Username:", username);
+      console.log("Password:", password);
+      window.location.href = "index.html";
+
+    } else if (username === "pravesh" && password === "sdfsdf") {
+      
+     
+      window.location.href = "index.html";
+    } else if (username === "kamlesh" && password === "sdfsdf") {
+      
+      window.location.href = "index.html";
+    } else {
+      alert("Incorrect username or password!");
+    }
+  });
+
+  if(username === 'pravesh'){
+    let elementsToHide = [
+      "masterData",
+      "CustomerSidebar",
+      "ContactSidebar",
+      "ItemsSidebar",
+      "EmployeeSidebar",
+      "TaskSidebar",
+      "TaskGroupSidebar",
+      "AssetSidebar"
+    ];
+    elementsToHide.forEach(function (id) {
+      var element = document.getElementById(id);
+      if (element) {
+        element.style.display = "none";
+      }
+    });
+  }
+
 
 })();
