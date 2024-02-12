@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Dashboard - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+    <script>
+        // Ignore this in your implementation
+        window.isMbscDemo = true;
+    </script>
+
+
+    <!-- Mobiscroll JS and CSS Includes -->
+    <link rel="stylesheet" href="assets/css/mobiscroll.javascript.min.css">
+    <script src="assets/js/mobiscroll.javascript.min.js"></script>
+
+    <style type="text/css">
+        .md-work-order-checkbox-label.mbsc-checkbox {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .md-work-order-date {
+            font-size: 14px;
+            border-bottom: 1px solid #ccc;
+            padding: 5px 10px;
+        }
+
+        .md-work-order-date-title {
+            font-size: 13px;
+            color: #959595;
+            padding: 5px 10px;
+            line-height: 18px;
+        }
+
+        .md-work-order-price-tag {
+            display: inline-block;
+            font-size: 11px;
+            line-height: 16px;
+            vertical-align: middle;
+            border: 1px solid #959595;
+            color: #959595;
+            border-radius: 5px;
+            margin: 0 10px;
+            padding: 0px 5px;
+        }
+
+        .md-work-order-scheduling .mbsc-timeline-parent {
+            height: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="dashboard.html" class="logo d-flex align-items-center">
+                <img src="assets/img/nxLogo.webp" alt="">
+                <span class="d-none d-lg-block">FieldService</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+
+        <div class="search-bar">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div><!-- End Search Bar -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li><!-- End Search Icon-->
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">Kavish Mojhoa</span>
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Kevin Anderson</h6>
+                            <span>Web Designer</span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Account Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                                <i class="bi bi-question-circle"></i>
+                                <span>Need Help?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+                <a class="nav-link nav-icon" href="index.html">
+                    <i class="bi bi-box-arrow-right"></i>
+                </a><!-- End Messages Icon -->
+            </ul>
+
+
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link " href="dashboard.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+            <li class="nav-heading">Setup</li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-person"></i>
+                    <span>Profile</span>
+                </a>
+            </li><!-- End Profile Page Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li><!-- End Contact Page Nav -->
+
+            <li class="nav-heading">Transactions</li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="planner3.html">
+                    <i class="bi bi-cash"></i>
+                    <span>Task Transactions</span>
+                </a>
+            </li>
+            <li class="nav-heading">Scheduler</li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="planner.html">
+                    <i class="bi bi-calendar-check-fill"></i>
+                    <span>Task Group</span>
+                </a>
+            </li>
+
+            <li class="nav-heading" id="masterData">Master Data</li>
+
+            <li class="nav-item" id="CustomerSidebar">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-person-standing"></i>
+                    <span>Customer</span>
+                </a>
+            </li>
+            <li class="nav-item" id="ContactSidebar">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-person-rolodex"></i>
+                    <span>Contacts</span>
+                </a>
+            </li>
+            <li class="nav-item" id="ItemsSidebar">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-card-checklist"></i>
+                    <span>Items</span>
+                </a>
+            </li>
+            <li class="nav-item" id="EmployeeSidebar"></li>
+            <a class="nav-link collapsed" href="">
+                <i class="bi bi-person-arms-up"></i>
+                <span>Employees</span>
+            </a>
+            </li>
+            <li class="nav-item" id="TaskSidebar">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-list-task"></i>
+                    <span>Task</span>
+                </a>
+            </li>
+            <li class="nav-item" id="TaskGroupSidebar">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-collection"></i>
+                    <span>Task Group</span>
+                </a>
+            </li>
+            <li class="nav-item" id="AssetSidebar">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-box"></i>
+                    <span>Asset</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Dashboard</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard">
+            <div class="row">
+                <div mbsc-page class="demo-work-order-scheduling">
+                    <div style="height:100%">
+                        <div id="demo-work-order-scheduling" class="md-work-order-scheduling"></div>
+            
+                        <div style="display:none;">
+                            <div id="demo-work-order-popup">
+                                <div class="mbsc-form-group">
+                                    <label>
+                                        Title
+                                        <input mbsc-input id="work-order-title" />
+                                    </label>
+                                    <label>
+                                        Location
+                                        <input mbsc-input id="work-order-location" />
+                                    </label>
+                                    <label>
+                                        Bill to customer ($)
+                                        <input mbsc-input id="work-order-bill" />
+                                    </label>
+                                    <label>
+                                        Notes
+                                        <textarea mbsc-textarea id="work-order-notes"></textarea>
+                                    </label>
+                                </div>
+                                <div class="mbsc-form-group">
+                                    <label>
+                                        Starts
+                                        <input mbsc-input id="work-order-start" />
+                                    </label>
+                                    <label>
+                                        Ends
+                                        <input mbsc-input id="work-order-end" />
+                                    </label>
+                                    <div id="work-order-date"></div>
+                                </div>
+                                <div id="work-order-resources" class="mbsc-form-group">
+            
+                                </div>
+            
+                                <div class="mbsc-button-group">
+                                    <button class="mbsc-button-block" id="work-order-delete" mbsc-button data-color="danger"
+                                        data-variant="outline">Delete work order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <script>
+            
+                    mobiscroll.setOptions({
+                        locale: mobiscroll.localeEn,                    // Specify language like: locale: mobiscroll.localePl or omit setting to use default
+                        theme: 'ios',                                   // Specify theme like: theme: 'ios' or omit setting to use default
+                        themeVariant: 'light'                           // More info about themeVariant: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-themeVariant
+                    });
+            
+                    function getCostString(cost) {
+                        return cost.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    }
+            
+                    var calendar,
+                        popup,
+                        range,
+                        oldEvent,
+                        tempEvent = {},
+                        deleteEvent,
+                        restoreEvent,
+                        titleInput = document.getElementById('work-order-title'),
+                        locationInput = document.getElementById('work-order-location'),
+                        billInput = document.getElementById('work-order-bill'),
+                        notesTextarea = document.getElementById('work-order-notes'),
+                        deleteButton = document.getElementById('work-order-delete'),
+                        resourceCont = document.getElementById('work-order-resources');
+            
+                    var myResources = [{
+                        id: 'contractors',
+                        name: 'Contractors',
+                        collapsed: true,
+                        eventCreation: false,
+                        children: [{
+                            id: 'builders',
+                            name: 'Builders',
+                            eventCreation: false,
+                            children: [{
+                                id: 'b1',
+                                name: 'Jude Chester'
+                            }, {
+                                id: 'b2',
+                                name: 'Willis Kane'
+                            }]
+                        }, {
+                            id: 'carpenters',
+                            name: 'Carpenters',
+                            eventCreation: false,
+                            children: [{
+                                id: 'c1',
+                                name: 'Derek Austyn'
+                            }, {
+                                id: 'c2',
+                                name: 'Merv Kenny'
+                            }]
+                        }]
+                    }, {
+                        id: 'employees',
+                        name: 'Employees',
+                        eventCreation: false,
+                        children: [{
+                            id: 'cement_masons',
+                            name: 'Cement masons',
+                            eventCreation: false,
+                            children: [{
+                                id: 'ce1',
+                                name: 'Ford Kaiden'
+                            }, {
+                                id: 'ce2',
+                                name: 'Jewell Ryder'
+                            }]
+                        }, {
+                            id: 'divers',
+                            name: 'Drivers',
+                            eventCreation: false,
+                            children: [{
+                                id: 'd1',
+                                name: 'Fred Valdez'
+                            }, {
+                                id: 'd2',
+                                name: 'Jon Drake',
+                            }, {
+                                id: 'd3',
+                                name: 'Lou Andie'
+                            }, {
+                                id: 'd4',
+                                name: 'Leon Porter'
+                            }]
+                        }]
+                    }, {
+                        id: 'equipment',
+                        name: 'Equipment',
+                        collapsed: true,
+                        eventCreation: false,
+                        children: [{
+                            id: 'concrete_mixers',
+                            name: 'Concrete mixers',
+                            eventCreation: false,
+                            children: [{
+                                id: 'cm1',
+                                name: 'AL 45 RFT'
+                            }, {
+                                id: 'cm2',
+                                name: 'KQ 62 PVZ'
+                            }, {
+                                id: 'cm3',
+                                name: 'RG 91 ZAL'
+                            }, {
+                                id: 'cm4',
+                                name: 'XF 83 GFM'
+                            }]
+                        }, {
+                            id: 'concrete_pumps',
+                            name: 'Concrete pumps',
+                            eventCreation: false,
+                            children: [{
+                                id: 'cp1',
+                                name: 'GF 61 BVM'
+                            }, {
+                                id: 'cp2',
+                                name: 'YC 55 ECT'
+                            }]
+                        }]
+                    }];
+            
+                    function createAddPopup(elm) {
+                        // hide delete button inside add popup
+                        deleteButton.style.display = 'none';
+            
+                        deleteEvent = true;
+                        restoreEvent = false;
+            
+                        // set popup header text and buttons for adding
+                        popup.setOptions({
+                            headerText: 'New work order',               // More info about headerText: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-headerText
+                            buttons: [                                  // More info about buttons: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-buttons
+                                'cancel',
+                                {
+                                    text: 'Add',
+                                    keyCode: 'enter',
+                                    handler: function () {
+                                        calendar.updateEvent(tempEvent);
+                                        deleteEvent = false;
+            
+                                        // navigate the calendar to the correct view
+                                        calendar.navigate(tempEvent.start);
+            
+                                        popup.close();
+                                    },
+                                    cssClass: 'mbsc-popup-button-primary'
+                                }
+                            ]
+                        });
+            
+                        // fill popup with a new event data
+                        mobiscroll.getInst(titleInput).value = tempEvent.title;
+                        mobiscroll.getInst(locationInput).value = tempEvent.location;
+                        mobiscroll.getInst(billInput).value = tempEvent.cost;
+                        mobiscroll.getInst(notesTextarea).value = '';
+                        range.setVal([tempEvent.start, tempEvent.end]);
+                        setCheckboxes(tempEvent.resource);
+            
+                        // set anchor for the popup
+                        popup.setOptions({ anchor: elm });
+            
+                        popup.open();
+                    }
+            
+                    function createEditPopup(args) {
+                        var ev = args.event;
+            
+                        // show delete button inside edit popup
+                        deleteButton.style.display = 'block';
+            
+                        deleteEvent = false;
+                        restoreEvent = true;
+            
+                        // set popup header text and buttons for editing
+                        popup.setOptions({
+                            headerText: 'Edit event',                   // More info about headerText: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-headerText
+                            buttons: [                                  // More info about buttons: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-buttons
+                                'cancel',
+                                {
+                                    text: 'Save',
+                                    keyCode: 'enter',
+                                    handler: function () {
+                                        var date = range.getVal();
+                                        // update event with the new properties on save button click
+                                        calendar.updateEvent({
+                                            id: ev.id,
+                                            title: titleInput.value,
+                                            location: locationInput.value,
+                                            cost: +billInput.value || 0,
+                                            notes: notesTextarea.value,
+                                            start: date[0],
+                                            end: date[1],
+                                            color: ev.color,
+                                            resource: ev.resource,
+                                        });
+            
+                                        // navigate the calendar to the correct view
+                                        calendar.navigate(date[0]);;
+            
+                                        restoreEvent = false;
+                                        popup.close();
+                                    },
+                                    cssClass: 'mbsc-popup-button-primary'
+                                }
+                            ]
+                        });
+            
+                        // fill popup with the selected event data
+                        mobiscroll.getInst(titleInput).value = ev.title || '';
+                        mobiscroll.getInst(locationInput).value = ev.location || '';
+                        mobiscroll.getInst(billInput).value = ev.cost || 0;
+                        mobiscroll.getInst(notesTextarea).value = ev.notes || '';
+                        range.setVal([ev.start, ev.end]);
+                        setCheckboxes(ev.resource);
+            
+                        // set anchor for the popup
+                        popup.setOptions({ anchor: args.domEvent.currentTarget });
+                        popup.open();
+                    }
+            
+                    calendar = mobiscroll.eventcalendar('#demo-work-order-scheduling', {
+                        clickToCreate: true,                            // More info about clickToCreate: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-clickToCreate
+                        dragToCreate: true,                             // More info about dragToCreate: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-dragToCreate
+                        dragToMove: true,                               // More info about dragToMove: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-dragToMove
+                        dragToResize: true,                             // More info about dragToResize: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-dragToResize
+                        dragTimeStep: 30,                               // More info about dragTimeStep: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-dragTimeStep
+                        view: {                                         // More info about view: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-view
+                            timeline: {
+                                type: 'week',
+                                startDay: 1,
+                                endDay: 5
+                            }
+                        },
+                        data: [{                                        // More info about data: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-data
+                            start: '2024-02-08T06:00',
+                            end: '2024-02-08T14:00',
+                            title: 'Farmhouse TPH',
+                            location: '3339 Spruce Drive',
+                            resource: ['d2', 'cm2', 'd4', 'cp1', 'cm2', 'ce2', 'b1'],
+                            color: '#12ca6c',
+                            cost: 48000
+                        }, {
+                            start: '2024-02-09T08:00',
+                            end: '2024-02-09T18:00',
+                            title: 'Block of flats KXT',
+                            location: '4698 Mercer Street',
+                            resource: ['d1', 'cm1', 'd3', 'cp1', 'cm3', 'ce2', 'b2'],
+                            color: '#c170c3',
+                            cost: 36000
+                        }, {
+                            start: '2024-02-10T12:00',
+                            end: '2024-02-10T20:00',
+                            title: 'Apartment house UGL',
+                            location: '3647 Tavern Place',
+                            resource: ['d3', 'cm2', 'd4', 'cp2', 'cm3', 'ce1', 'b2'],
+                            color: '#03c9d2',
+                            cost: 50000
+                        }, {
+                            start: '2024-02-11T11:00',
+                            end: '2024-02-11T19:00',
+                            title: 'Detached house WKB',
+                            location: '956 Dovetail Estates',
+                            resource: ['d1', 'cm3', 'd4', 'cp3', 'cm4', 'c2', 'b1', 'ce2'],
+                            color: '#ff1515',
+                            cost: 55000
+                        }, {
+                            start: '2024-02-12T10:00',
+                            end: '2024-02-12T18:00',
+                            title: 'Apartment house XAZ',
+                            location: '4919 Jett Lane, Inglewood',
+                            resource: ['d1', 'cm4', 'd4', 'cp1', 'cm2', 'c2', 'b2'],
+                            color: '#12ca6c',
+                            cost: 62000
+                        }, {
+                            start: '2024-02-12T08:00',
+                            end: '2024-02-12T16:00',
+                            title: 'Block of flats DRG',
+                            location: '486 Sycamore Fork Road',
+                            resource: ['d2', 'cm1', 'd3', 'cp2', 'ce2', 'c1', 'b1'],
+                            color: '#efd414',
+                            cost: 39000
+                        }, {
+                            start: '2024-02-13T09:00',
+                            end: '2024-02-13T17:00',
+                            title: 'Farmhouse YQK',
+                            location: '1563 Retreat Avenue',
+                            resource: ['d2', 'cm4', 'd4', 'cm2', 'cp1', 'c2', 'b2'],
+                            color: '#cf49d8',
+                            cost: 45000
+                        }, {
+                            start: '2024-02-14T07:00',
+                            end: '2024-02-14T15:00',
+                            title: 'Apartment house SWP',
+                            location: '628 Daylene Drive',
+                            resource: ['d2', 'cm3', 'd3', 'cm1', 'cp2', 'c1', 'b1'],
+                            color: '#c170c3',
+                            cost: 53000
+                        }, {
+                            start: '2024-02-15T10:00',
+                            end: '2024-02-15T18:00',
+                            title: 'Detached house OZL',
+                            location: '1830 Rinehart Road',
+                            resource: ['d3', 'cm2', 'd4', 'cp2', 'cm3', 'ce1', 'b2'],
+                            color: '#ff1515',
+                            cost: 47000
+                        }, {
+                            start: '2024-02-16T11:00',
+                            end: '2024-02-16T19:00',
+                            title: 'Farmhouse PSZ',
+                            location: '2410 Union Street',
+                            resource: ['d1', 'cm3', 'd4', 'cp3', 'cm4', 'c2', 'b1', 'ce2'],
+                            color: '#ff1515',
+                            cost: 64000
+                        }],
+                        resources: myResources,                         // More info about resources: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-resources
+                        extendDefaultEvent: function () {               // More info about extendDefaultEvent: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-extendDefaultEvent
+                            return {
+                                title: 'Work order',
+                                location: '',
+                                cost: 0
+                            };
+                        },
+                        onEventClick: function (args) {                 // More info about onEventClick: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#event-onEventClick
+                            oldEvent = { ...args.event };
+                            tempEvent = args.event;
+            
+                            if (!popup.isVisible()) {
+                                createEditPopup(args);
+                            }
+                        },
+                        onEventCreated: function (args) {               // More info about onEventCreated: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#event-onEventCreated
+                            popup.close();
+                            // store temporary event
+                            tempEvent = args.event;
+                            createAddPopup(args.target);
+                        },
+                        onEventDeleted: function (args) {               // More info about onEventDeleted: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#event-onEventDeleted
+                            mobiscroll.snackbar({
+                                button: {
+                                    action: function () {
+                                        calendar.addEvent(args.event);
+                                    },
+                                    text: 'Undo'
+                                },
+                                message: 'Event deleted'
+                            });
+                        },
+                        renderDay: function (args) {                    // More info about renderDay: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-renderDay
+                            var formatDate = mobiscroll.formatDate;
+                            var events = args.events;
+                            var costs = 0;
+            
+                            if (events) {
+                                for (var i = 0; i < events.length; ++i) {
+                                    costs += events[i].cost;
+                                }
+                            }
+            
+                            return '<div class="md-work-order-date">' + formatDate('DD DDD MMM YYYY', args.date) + '</div>' +
+                                '<div class="md-work-order-date-title">Total revenue: $' + getCostString(costs) + '</div>';
+            
+                        },
+                        renderScheduleEventContent: function (event) {  // More info about renderScheduleEventContent: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-renderScheduleEventContent
+                            return '<div>' + event.title + '<span class="md-work-order-price-tag">$' + getCostString(event.original.cost) + '</span></div>';
+                        }
+                    });
+            
+                    popup = mobiscroll.popup('#demo-work-order-popup', {
+                        display: 'bottom',                              // Specify display mode like: display: 'bottom' or omit setting to use default
+                        contentPadding: false,
+                        fullScreen: true,
+                        scrollLock: false,
+                        onClose: function () {                          // More info about onClose: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#event-onClose
+                            if (deleteEvent) {
+                                calendar.removeEvent(tempEvent);
+                            } else if (restoreEvent) {
+                                calendar.updateEvent(oldEvent);
+                            }
+                        },
+                        responsive: {                                   // More info about responsive: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-responsive
+                            medium: {
+                                display: 'anchored',                    // Specify display mode like: display: 'bottom' or omit setting to use default
+                                width: 520,                             // More info about width: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-width
+                                fullScreen: false,
+                                touchUi: false
+                            }
+                        }
+                    });
+            
+                    titleInput.addEventListener('input', function (ev) {
+                        // update current event's title
+                        tempEvent.title = ev.target.value;
+                    });
+            
+                    locationInput.addEventListener('input', function (ev) {
+                        // update current event's location
+                        tempEvent.location = ev.target.value;
+                    });
+            
+                    billInput.addEventListener('input', function (ev) {
+                        // update current event's cost
+                        tempEvent.cost = +ev.target.value || 0;;
+                    });
+            
+                    notesTextarea.addEventListener('change', function (ev) {
+                        // update current event's description
+                        tempEvent.notes = ev.target.value;
+                    });
+            
+                    range = mobiscroll.datepicker('#work-order-date', {
+                        controls: ['time'],
+                        select: 'range',
+                        startInput: '#work-order-start',
+                        endInput: '#work-order-end',
+                        showRangeLabels: false,
+                        touchUi: false,
+                        stepMinute: 30,
+                        minTime: '06:00',
+                        maxTime: '22:00',
+                        onChange: function (args) {
+                            var date = args.value;
+                            // update event's start date
+                            tempEvent.start = date[0];
+                            tempEvent.end = date[1];
+                        }
+                    });
+            
+                    document.querySelectorAll('input[name=event-status]').forEach(function (elm) {
+                        elm.addEventListener('change', function () {
+                            // update current event's free property
+                            tempEvent.free = mobiscroll.getInst(freeSegmented).checked;
+                        });
+                    });
+            
+                    deleteButton.addEventListener('click', function () {
+                        // delete current event on button click
+                        calendar.removeEvent(tempEvent);
+                        popup.close();
+            
+                        // save a local reference to the deleted event
+                        var deletedEvent = tempEvent;
+            
+                        mobiscroll.snackbar({
+                            button: {
+                                action: function () {
+                                    calendar.addEvent(deletedEvent);
+                                },
+                                text: 'Undo'
+                            },
+                            message: 'Event deleted'
+                        });
+                    });
+            
+                    function setCheckboxes(resources) {
+                        var checkboxes = document.getElementsByClassName('work-order-checkbox');
+            
+                        for (var i = 0; i < checkboxes.length; i++) {
+                            var checkbox = checkboxes[i];
+                            mobiscroll.getInst(checkbox).checked = resources.indexOf(checkbox.getAttribute('data-value')) !== -1;
+                        }
+                    }
+            
+                    function appendChekboxes() {
+                        var checkboxes = '<div class="mbsc-grid mbsc-no-padding"><div class="mbsc-row">';
+            
+                        for (var i = 0; i < myResources.length; ++i) {
+                            for (var j = 0; j < myResources[i].children.length; ++j) {
+                                var resource = myResources[i].children[j];
+            
+                                checkboxes += '<div class="mbsc-col-sm-4"><div class="mbsc-form-group-title">' + resource.name + '</div>';
+            
+                                for (var k = 0; k < resource.children.length; ++k) {
+                                    var r = resource.children[k];
+                                    checkboxes += '<label class="work-order-checkbox-label"><input class="work-order-checkbox" data-value="' +
+                                        r.id + '" type="checkbox" mbsc-checkbox data-theme="material" data-label="' + r.name + '"/></label>';
+            
+                                }
+                                checkboxes += '</div>';
+                            }
+                        }
+                        checkboxes += '</div></div>';
+            
+                        resourceCont.innerHTML = checkboxes;
+                        mobiscroll.enhance(resourceCont);
+                    }
+            
+                    appendChekboxes();
+                </script>
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved to NX2SQUARE
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
