@@ -347,8 +347,6 @@
     let password = document.getElementById("yourPassword").value;
 
     if (username === "kavish" && password === "sdfsdf") {
-      console.log("Username:", username);
-      console.log("Password:", password);
       window.location.href = "index.html";
 
     } else if (username === "pravesh" && password === "sdfsdf") {
@@ -359,28 +357,29 @@
       
       window.location.href = "dashboard.html";
     } else {
+      
       alert("Incorrect username or password!");
     }
   });
 
-  if(username === 'pravesh'){
-    let elementsToHide = [
-      "masterData",
-      "CustomerSidebar",
-      "ContactSidebar",
-      "ItemsSidebar",
-      "EmployeeSidebar",
-      "TaskSidebar",
-      "TaskGroupSidebar",
-      "AssetSidebar"
-    ];
-    elementsToHide.forEach(function (id) {
-      var element = document.getElementById(id);
-      if (element) {
-        element.style.display = "none";
-      }
-    });
-  }
+  // if(username === 'pravesh'){
+  //   let elementsToHide = [
+  //     "masterData",
+  //     "CustomerSidebar",
+  //     "ContactSidebar",
+  //     "ItemsSidebar",
+  //     "EmployeeSidebar",
+  //     "TaskSidebar",
+  //     "TaskGroupSidebar",
+  //     "AssetSidebar"
+  //   ];
+  //   elementsToHide.forEach(function (id) {
+  //     var element = document.getElementById(id);
+  //     if (element) {
+  //       element.style.display = "none";
+  //     }
+  //   });
+  // }
 
 
 })();
