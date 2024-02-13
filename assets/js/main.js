@@ -20,10 +20,6 @@
     }
   }
 
-
-
-
-
   /**
    * Easy event listener function
    */
@@ -338,29 +334,47 @@
     }, 200);
   }
 
+  // document.getElementById("loginForm").addEventListener("submit", function (event) {
+  //   event.preventDefault();
 
+  //   let username = document.getElementById("yourUsername").value;
+  //   let password = document.getElementById("yourPassword").value;
 
-  document.getElementById("loginForm").addEventListener("submit", function (event) {
-    event.preventDefault();
+  //   if (username === "kavish" && password === "sdfsdf") {
+  //     window.location.href = "index.html";
+  //   } else if (username === "pravesh" && password === "sdfsdf") {
+  //     window.location.href = "dashboard.html";
+  //   } else if (username === "kamlesh" && password === "sdfsdf") {
+  //     window.location.href = "dashboard.html";
+  //   } else {
+  //     alert("Incorrect username or password!");
+  //   }
+  // });
 
-    let username = document.getElementById("yourUsername").value;
-    let password = document.getElementById("yourPassword").value;
+  //Permission
+// script.js
 
-    if (username === "kavish" && password === "sdfsdf") {
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  let username = document.getElementById("yourUsername").value;
+  let password = document.getElementById("yourPassword").value;
+
+  if (username === "kavish" && password === "sdfsdf") {
+      localStorage.setItem("loggedInUser", "kavish");
       window.location.href = "index.html";
-
-    } else if (username === "pravesh" && password === "sdfsdf") {
-
-
+  } else if (username === "pravesh" && password === "sdfsdf") {
+      localStorage.setItem("loggedInUser", "pravesh");
       window.location.href = "dashboard.html";
-    } else if (username === "kamlesh" && password === "sdfsdf") {
-
+  } else if (username === "kamlesh" && password === "sdfsdf") {
+      localStorage.setItem("loggedInUser", "kamlesh");
       window.location.href = "dashboard.html";
-    } else {
-
+  } else {
       alert("Incorrect username or password!");
-    }
-  });
+  }
+});
 })();
+
+
 
 
