@@ -350,16 +350,45 @@
       window.location.href = "index.html";
 
     } else if (username === "pravesh" && password === "sdfsdf") {
-      
-     
+
+
       window.location.href = "dashboard.html";
     } else if (username === "kamlesh" && password === "sdfsdf") {
-      
+
       window.location.href = "dashboard.html";
     } else {
 
       alert("Incorrect username or password!");
     }
   });
+
+  function getCurrentTimestamp() {
+    return new Date().toISOString();
+  }
+
+  function logPageVisit(page) {
+    let spanElement = document.querySelector('.d-none.d-md-block.dropdown-toggle.ps-2');
+    let username = spanElement ? spanElement.textContent : "Anonymous";
+
+    // Retrieve existing log data from localStorage
+    var logData = JSON.parse(localStorage.getItem("pageVisitLog")) || [];
+
+    // Create log entry
+    var logEntry = {
+      "user": username,
+      "timestamp": getCurrentTimestamp(),
+      "page": page
+    };
+
+    logData.push(logEntry);
+    
+    localStorage.setItem("pageVisitLog", JSON.stringify(logData));
+  }
+
+  window.addEventListener("load", function () {
+    logPageVisit(window.location.href);
+  });
+
+
 
 })();
