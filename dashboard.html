@@ -65,8 +65,10 @@
             }
 
             if (loggedInUser === "kamlesh") {
-                const transactionLink = document.getElementById('taskTransactionLink');
-                transactionLink.style.display = 'none';
+                const transactionLinkParent = document.getElementById('taskTransactionLink');
+                const transactionLinkChild = document.getElementById('taskTransactionLink1');
+                transactionLinkParent.style.display = 'none';
+                transactionLinkChild.style.display = 'none';
             }
             console.log("Before the page is loaded!");
         }
@@ -205,7 +207,7 @@
             <li class="nav-heading" id="taskTransactionLink">Transactions</li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="planner3.html" id="taskTransactionLink">
+                <a class="nav-link collapsed" href="planner3.html" id="taskTransactionLink1">
                     <i class="bi bi-cash"></i>
                     <span>Task Transactions</span>
                 </a>
