@@ -362,7 +362,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
 
   if (username === "kavish" && password === "sdfsdf") {
       localStorage.setItem("loggedInUser", "kavish");
-      window.location.href = "index.html";
+      window.location.href = "dashboard.html";
   } else if (username === "pravesh" && password === "sdfsdf") {
       localStorage.setItem("loggedInUser", "pravesh");
       window.location.href = "dashboard.html";

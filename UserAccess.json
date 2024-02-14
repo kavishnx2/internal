@@ -1,0 +1,25 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Kavish Mojhoa",
+            "access_level": "admin",
+            "username": "kavish",
+            "password": "sdfsdf"
+        },
+        {
+            "id": 2,
+            "name": "Pravesh Gowreea",
+            "access_level": "moderator",
+            "username": "pravesh",
+            "password": "sdfsdf"
+        },
+        {
+            "id": 3,
+            "name": "Kamlesh Kaso",
+            "access_level": "user",
+            "username": "kamlesh",
+            "password": "sdfsdf"
+        }
+    ]
+}
