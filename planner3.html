@@ -2,6 +2,42 @@
 <html lang="en">
 
 <head>
+
+    <style>
+        /* Loading overlay styles */
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(61, 61, 61, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #loading-spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #loading-message {
+            font-size: 20px;
+            margin-left: 10px;
+        }
+    </style>
+
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -32,6 +68,52 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- <script>
+        function beforeLoadFunction() {
+            // Fetch user access data
+            fetch('UserAccess.json')
+                .then(response => response.json())
+                .then(data => {
+                    let loggedInUser = localStorage.getItem('loggedInUser');
+
+                    console.log('Planner3: ' + loggedInUser);
+
+                    if (loggedInUser) {
+                        let hasAccess = false;
+
+                        for (let user of data.users) {
+                            if (user.username === loggedInUser) {
+                                if (user.access_level === "user") {
+                                    //alert('You do not have permission to access this page.');
+                                    window.location.href = 'index.html';
+                                } else {
+                                    console.log('Access granted for user:', loggedInUser);
+                                    hasAccess = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (!hasAccess) {
+                            // Redirect to login page if user is not found in the data
+                            //alert('User not found or you do not have permission to access this page.');
+                            window.location.href = 'index.html';
+                        }
+                    } else {
+                        // Redirect to login page if user is not logged in
+                        //alert('Please login to access this page.');
+                        window.location.href = 'index.html';
+                    }
+                })
+                .catch(error => console.error('Error fetching user access data:', error));
+        }
+
+        window.onload = beforeLoadFunction;
+    </script> -->
+
+
+
     <!-- =======================================================
   * Template Name: NiceAdmin
   * Updated: Jan 29 2024 with Bootstrap v5.3.2
@@ -87,6 +169,63 @@
 </head>
 
 <body>
+
+    <div id="loading-overlay">
+        <div id="loading-spinner"></div>
+        <div id="loading-message">Loading...</div>
+    </div>
+    <script>
+        function beforeLoadFunction() {
+            // Display loading overlay
+            document.getElementById('loading-overlay').style.display = 'flex';
+    
+            // Fetch user access data
+            fetch('UserAccess.json')
+                .then(response => response.json())
+                .then(data => {
+                    let loggedInUser = localStorage.getItem('loggedInUser');
+    
+                    console.log('Planner3: ' + loggedInUser);
+    
+                    if (loggedInUser) {
+                        let hasAccess = false;
+    
+                        for (let user of data.users) {
+                            if (user.username === loggedInUser) {
+                                if (user.access_level === "user") {
+                                    alert('You do not have permission to access this page.');
+                                    window.location.href = 'index.html';
+                                } else {
+                                    console.log('Access granted for user:', loggedInUser);
+                                    hasAccess = true;
+                                    break;
+                                }
+                            }
+                        }
+    
+                        if (!hasAccess) {
+                            // Redirect to login page if user is not found in the data
+                            window.location.href = 'index.html';
+                        }
+                    } else {
+                        // Redirect to login page if user is not logged in
+                        alert('Please login to access this page.');
+                        window.location.href = 'index.html';
+                    }
+    
+                    // Hide loading overlay once data is fetched
+                    document.getElementById('loading-overlay').style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Error fetching user access data:', error);
+                    // Hide loading overlay in case of an error
+                    document.getElementById('loading-overlay').style.display = 'none';
+                });
+        }
+    
+        window.onload = beforeLoadFunction;
+    </script>
+    
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
@@ -289,7 +428,7 @@
                 <div mbsc-page class="demo-work-order-scheduling">
                     <div style="height:100%">
                         <div id="demo-work-order-scheduling" class="md-work-order-scheduling"></div>
-            
+
                         <div style="display:none;">
                             <div id="demo-work-order-popup">
                                 <div class="mbsc-form-group">
@@ -322,30 +461,30 @@
                                     <div id="work-order-date"></div>
                                 </div>
                                 <div id="work-order-resources" class="mbsc-form-group">
-            
+
                                 </div>
-            
+
                                 <div class="mbsc-button-group">
-                                    <button class="mbsc-button-block" id="work-order-delete" mbsc-button data-color="danger"
-                                        data-variant="outline">Delete work order</button>
+                                    <button class="mbsc-button-block" id="work-order-delete" mbsc-button
+                                        data-color="danger" data-variant="outline">Delete work order</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            
+
                 <script>
-            
+
                     mobiscroll.setOptions({
                         locale: mobiscroll.localeEn,                    // Specify language like: locale: mobiscroll.localePl or omit setting to use default
                         theme: 'ios',                                   // Specify theme like: theme: 'ios' or omit setting to use default
                         themeVariant: 'light'                           // More info about themeVariant: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-themeVariant
                     });
-            
+
                     function getCostString(cost) {
                         return cost.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     }
-            
+
                     var calendar,
                         popup,
                         range,
@@ -359,7 +498,7 @@
                         notesTextarea = document.getElementById('work-order-notes'),
                         deleteButton = document.getElementById('work-order-delete'),
                         resourceCont = document.getElementById('work-order-resources');
-            
+
                     var myResources = [{
                         id: 'contractors',
                         name: 'Contractors',
@@ -456,14 +595,14 @@
                             }]
                         }]
                     }];
-            
+
                     function createAddPopup(elm) {
                         // hide delete button inside add popup
                         deleteButton.style.display = 'none';
-            
+
                         deleteEvent = true;
                         restoreEvent = false;
-            
+
                         // set popup header text and buttons for adding
                         popup.setOptions({
                             headerText: 'New work order',               // More info about headerText: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-headerText
@@ -475,17 +614,17 @@
                                     handler: function () {
                                         calendar.updateEvent(tempEvent);
                                         deleteEvent = false;
-            
+
                                         // navigate the calendar to the correct view
                                         calendar.navigate(tempEvent.start);
-            
+
                                         popup.close();
                                     },
                                     cssClass: 'mbsc-popup-button-primary'
                                 }
                             ]
                         });
-            
+
                         // fill popup with a new event data
                         mobiscroll.getInst(titleInput).value = tempEvent.title;
                         mobiscroll.getInst(locationInput).value = tempEvent.location;
@@ -493,22 +632,22 @@
                         mobiscroll.getInst(notesTextarea).value = '';
                         range.setVal([tempEvent.start, tempEvent.end]);
                         setCheckboxes(tempEvent.resource);
-            
+
                         // set anchor for the popup
                         popup.setOptions({ anchor: elm });
-            
+
                         popup.open();
                     }
-            
+
                     function createEditPopup(args) {
                         var ev = args.event;
-            
+
                         // show delete button inside edit popup
                         deleteButton.style.display = 'block';
-            
+
                         deleteEvent = false;
                         restoreEvent = true;
-            
+
                         // set popup header text and buttons for editing
                         popup.setOptions({
                             headerText: 'Edit event',                   // More info about headerText: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-headerText
@@ -531,10 +670,10 @@
                                             color: ev.color,
                                             resource: ev.resource,
                                         });
-            
+
                                         // navigate the calendar to the correct view
                                         calendar.navigate(date[0]);;
-            
+
                                         restoreEvent = false;
                                         popup.close();
                                     },
@@ -542,7 +681,7 @@
                                 }
                             ]
                         });
-            
+
                         // fill popup with the selected event data
                         mobiscroll.getInst(titleInput).value = ev.title || '';
                         mobiscroll.getInst(locationInput).value = ev.location || '';
@@ -550,12 +689,12 @@
                         mobiscroll.getInst(notesTextarea).value = ev.notes || '';
                         range.setVal([ev.start, ev.end]);
                         setCheckboxes(ev.resource);
-            
+
                         // set anchor for the popup
                         popup.setOptions({ anchor: args.domEvent.currentTarget });
                         popup.open();
                     }
-            
+
                     calendar = mobiscroll.eventcalendar('#demo-work-order-scheduling', {
                         clickToCreate: true,                            // More info about clickToCreate: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-clickToCreate
                         dragToCreate: true,                             // More info about dragToCreate: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-dragToCreate
@@ -661,7 +800,7 @@
                         onEventClick: function (args) {                 // More info about onEventClick: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#event-onEventClick
                             oldEvent = { ...args.event };
                             tempEvent = args.event;
-            
+
                             if (!popup.isVisible()) {
                                 createEditPopup(args);
                             }
@@ -687,22 +826,22 @@
                             var formatDate = mobiscroll.formatDate;
                             var events = args.events;
                             var costs = 0;
-            
+
                             if (events) {
                                 for (var i = 0; i < events.length; ++i) {
                                     costs += events[i].cost;
                                 }
                             }
-            
+
                             return '<div class="md-work-order-date">' + formatDate('DD DDD MMM YYYY', args.date) + '</div>' +
                                 '<div class="md-work-order-date-title">Total revenue: $' + getCostString(costs) + '</div>';
-            
+
                         },
                         renderScheduleEventContent: function (event) {  // More info about renderScheduleEventContent: https://docs.mobiscroll.com/5-28-3/javascript/eventcalendar#opt-renderScheduleEventContent
                             return '<div>' + event.title + '<span class="md-work-order-price-tag">$' + getCostString(event.original.cost) + '</span></div>';
                         }
                     });
-            
+
                     popup = mobiscroll.popup('#demo-work-order-popup', {
                         display: 'bottom',                              // Specify display mode like: display: 'bottom' or omit setting to use default
                         contentPadding: false,
@@ -724,27 +863,27 @@
                             }
                         }
                     });
-            
+
                     titleInput.addEventListener('input', function (ev) {
                         // update current event's title
                         tempEvent.title = ev.target.value;
                     });
-            
+
                     locationInput.addEventListener('input', function (ev) {
                         // update current event's location
                         tempEvent.location = ev.target.value;
                     });
-            
+
                     billInput.addEventListener('input', function (ev) {
                         // update current event's cost
                         tempEvent.cost = +ev.target.value || 0;;
                     });
-            
+
                     notesTextarea.addEventListener('change', function (ev) {
                         // update current event's description
                         tempEvent.notes = ev.target.value;
                     });
-            
+
                     range = mobiscroll.datepicker('#work-order-date', {
                         controls: ['time'],
                         select: 'range',
@@ -762,22 +901,22 @@
                             tempEvent.end = date[1];
                         }
                     });
-            
+
                     document.querySelectorAll('input[name=event-status]').forEach(function (elm) {
                         elm.addEventListener('change', function () {
                             // update current event's free property
                             tempEvent.free = mobiscroll.getInst(freeSegmented).checked;
                         });
                     });
-            
+
                     deleteButton.addEventListener('click', function () {
                         // delete current event on button click
                         calendar.removeEvent(tempEvent);
                         popup.close();
-            
+
                         // save a local reference to the deleted event
                         var deletedEvent = tempEvent;
-            
+
                         mobiscroll.snackbar({
                             button: {
                                 action: function () {
@@ -788,40 +927,40 @@
                             message: 'Event deleted'
                         });
                     });
-            
+
                     function setCheckboxes(resources) {
                         var checkboxes = document.getElementsByClassName('work-order-checkbox');
-            
+
                         for (var i = 0; i < checkboxes.length; i++) {
                             var checkbox = checkboxes[i];
                             mobiscroll.getInst(checkbox).checked = resources.indexOf(checkbox.getAttribute('data-value')) !== -1;
                         }
                     }
-            
+
                     function appendChekboxes() {
                         var checkboxes = '<div class="mbsc-grid mbsc-no-padding"><div class="mbsc-row">';
-            
+
                         for (var i = 0; i < myResources.length; ++i) {
                             for (var j = 0; j < myResources[i].children.length; ++j) {
                                 var resource = myResources[i].children[j];
-            
+
                                 checkboxes += '<div class="mbsc-col-sm-4"><div class="mbsc-form-group-title">' + resource.name + '</div>';
-            
+
                                 for (var k = 0; k < resource.children.length; ++k) {
                                     var r = resource.children[k];
                                     checkboxes += '<label class="work-order-checkbox-label"><input class="work-order-checkbox" data-value="' +
                                         r.id + '" type="checkbox" mbsc-checkbox data-theme="material" data-label="' + r.name + '"/></label>';
-            
+
                                 }
                                 checkboxes += '</div>';
                             }
                         }
                         checkboxes += '</div></div>';
-            
+
                         resourceCont.innerHTML = checkboxes;
                         mobiscroll.enhance(resourceCont);
                     }
-            
+
                     appendChekboxes();
                 </script>
             </div>

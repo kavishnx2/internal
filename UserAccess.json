@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "Kavish Mojhoa",
-            "access_level": "admin",
+            "access_level": "user",
             "username": "kavish",
             "password": "sdfsdf"
         },
